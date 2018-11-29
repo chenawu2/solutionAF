@@ -12,10 +12,22 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    var flickrPhotosVC: FlickrPhotosViewController?
+    var flickrPhotosStore: FlickrPhotosStore?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let flickrPhotosStore = FlickrPhotosStore()
+        self.flickrPhotosStore = flickrPhotosStore
+        
+        let flickrPhotosVC = FlickrPhotosViewController(flickrPhotosStore: flickrPhotosStore)
+        self.flickrPhotosVC = flickrPhotosVC
+        
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        window?.rootViewController = flickrPhotosVC
+        
         return true
     }
 

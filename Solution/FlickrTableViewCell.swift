@@ -17,7 +17,7 @@ final class FlickrTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        activityIndicator.hidesWhenStopped = true
+        activityIndicator.style = .gray
         activityIndicator.startAnimating()
         contentView.addSubview(activityIndicator)
         contentView.addSubview(photoImageView)
